@@ -242,16 +242,16 @@ export default {
     async create(req: Request, res: Response) {
         const emailService = new EmailService();
 
-        emailService.sendMail(
-            {
+        emailService.sendMail({
+            to: {
                 name: 'Thiago Vieira',
                 email: 'teste@teste.com'
             },
-            {
+            message: {
                 subject: 'Mensagem de teste',
                 body: 'Corpo da mensagem de teste',
             }
-        );
+        });
 
         return res.send();
     }
